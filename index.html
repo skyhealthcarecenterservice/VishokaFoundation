@@ -264,6 +264,28 @@
             perspective: 1200px;
         }
 
+        .floating-wa {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 80;
+            width: 3.25rem;
+            height: 3.25rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #25D366;
+            color: #ffffff;
+            box-shadow: 0 18px 40px rgba(37, 211, 102, 0.35);
+            transition: transform 200ms ease, box-shadow 200ms ease;
+        }
+
+        .floating-wa:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 48px rgba(37, 211, 102, 0.45);
+        }
+
         @media (max-width: 767px) {
             .mural-stage {
                 perspective: none;
@@ -317,6 +339,12 @@
                     <a href="#home" onclick="lenis.scrollTo('#home')" class="px-4 py-1.5 rounded-full text-[0.65rem] font-bold hover:bg-white dark:hover:bg-white/10 transition-all flex flex-col items-center group">
                         <span class="uppercase tracking-widest">Home</span>
                     </a>
+                    <a href="#about" onclick="lenis.scrollTo('#about')" class="px-4 py-1.5 rounded-full text-[0.65rem] font-bold hover:bg-white dark:hover:bg-white/10 transition-all flex flex-col items-center group">
+                        <span class="uppercase tracking-widest">About</span>
+                    </a>
+                    <a href="#mission" onclick="lenis.scrollTo('#mission')" class="px-4 py-1.5 rounded-full text-[0.65rem] font-bold hover:bg-white dark:hover:bg-white/10 transition-all flex flex-col items-center group">
+                        <span class="uppercase tracking-widest">Mission</span>
+                    </a>
                     <a href="#president" onclick="lenis.scrollTo('#president')" class="px-4 py-1.5 rounded-full text-[0.65rem] font-bold hover:bg-white dark:hover:bg-white/10 transition-all flex flex-col items-center group">
                         <span class="uppercase tracking-widest">president</span>
                     </a>
@@ -328,6 +356,12 @@
                     </a>
                     <a href="#contact" onclick="lenis.scrollTo('#contact')" class="px-4 py-1.5 rounded-full text-[0.65rem] font-bold hover:bg-white dark:hover:bg-white/10 transition-all flex flex-col items-center group">
                         <span class="uppercase tracking-widest">Contact</span>
+                    </a>
+                    <a href="#donation" onclick="lenis.scrollTo('#donation')" class="px-4 py-1.5 rounded-full text-[0.65rem] font-bold hover:bg-white dark:hover:bg-white/10 transition-all flex flex-col items-center group">
+                        <span class="uppercase tracking-widest">Donate</span>
+                    </a>
+                    <a href="#join" onclick="lenis.scrollTo('#join')" class="px-4 py-1.5 rounded-full text-[0.65rem] font-bold hover:bg-white dark:hover:bg-white/10 transition-all flex flex-col items-center group">
+                        <span class="uppercase tracking-widest">Join</span>
                     </a>
                 </div>
 
@@ -344,7 +378,7 @@
         </div>
     </nav>
 
-    <header id="home" class="relative w-full flex flex-col justify-center items-center z-10 px-6 pt-32 pb-36 sm:pb-32 md:pb-28 lg:pb-20 overflow-hidden" style="min-height: calc(var(--real-vh, 100vh));">
+    <header id="home" class="relative w-full flex flex-col justify-center items-center z-10 px-6 pt-20 pb-12 sm:pb-16 md:pb-12 lg:pb-10 overflow-hidden" style="min-height: calc(var(--real-vh, 100vh));">
         
         <div class="absolute top-[25%] left-[10%] glass-panel px-4 py-2 rounded-full text-[0.55rem] uppercase tracking-widest hidden lg:flex items-center gap-2 animate-float-slow opacity-80 shadow-soft z-20">
             <div class="w-1.5 h-1.5 rounded-full bg-velvet-sage animate-pulse"></div> Live Impact
@@ -354,21 +388,25 @@
         </div>
 
         <div class="z-10 flex flex-col items-center justify-center w-full text-center max-w-5xl flex-grow">
-            <div class="gsap-fade-up inline-flex items-center gap-3 px-5 py-2 glass-panel rounded-full mb-8 border border-velvet-sage/20 shadow-sm mt-4">
-                <i data-lucide="heart-handshake" class="w-4 h-4 text-velvet-sage animate-pulse-slow"></i>
-                <span class="text-[0.65rem] font-bold uppercase tracking-widest text-stone-600 dark:text-stone-300">A Social & Service-Oriented Organization</span>
+            <div class="gsap-fade-up mb-4 md:mb-5 mt-4 md:mt-0">
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-velvet-gold/40 bg-white/70 dark:bg-white/5 text-[0.55rem] md:text-xs font-bold tracking-[0.15em] uppercase text-stone-700 dark:text-stone-200">
+                    <i data-lucide="badge-check" class="w-3 h-3 md:w-3.5 md:h-3.5 text-velvet-gold"></i>
+                    Registration No: UK0600842026015972
+                </span>
             </div>
-            
-            <h1 class="gsap-fade-up font-serif text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] leading-[1.05] text-stone-900 dark:text-white mb-6">
+
+            <h1 class="gsap-fade-up font-serif text-5xl md:text-6xl lg:text-[5rem] xl:text-[5.5rem] leading-[1.1] text-stone-900 dark:text-white mb-6 mt-4">
                 Towards a Life of <br>
                 <span class="italic text-velvet-sage relative inline-block">
                     Bliss & Compassion
                     <svg class="absolute -bottom-1 md:-bottom-2 left-0 w-full h-2 md:h-3 text-velvet-gold/40" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
                 </span>
             </h1>
+
+            <p class="gsap-fade-up text-sm md:text-base text-velvet-sage font-semibold uppercase tracking-[0.2em] mb-6">आनंदमय जीवन की ओर</p>
             
-            <p class="gsap-fade-up text-sm md:text-base lg:text-lg text-stone-600 dark:text-stone-300 max-w-2xl font-light leading-relaxed mb-10">
-                Vishoka Foundation is a social and service-oriented organization that promotes compassion, consciousness, and collective well-being in society. Led by Ms. Deepika Kapoor, it works tirelessly through wellness programs, awareness campaigns, value-based education, and humanitarian service to bring inner peace, holistic growth, and social harmony to people's lives.
+            <p class="gsap-fade-up text-sm md:text-base lg:text-lg text-stone-600 dark:text-stone-300 max-w-2xl font-light leading-relaxed mb-10 mx-auto">
+                Vishoka Welfare Association is a dedicated organization promoting compassion and collective well-being. Led by Ms. Deepika Kapoor, we work tirelessly through wellness programs, healthcare services, and humanitarian initiatives to bring inner peace and holistic growth to people's lives.
             </p>
 
             <div class="gsap-fade-up flex flex-wrap gap-4 justify-center">
@@ -378,9 +416,12 @@
                 <a href="#contact" onclick="lenis.scrollTo('#contact')" class="px-8 py-3.5 glass-panel text-stone-900 dark:text-white rounded-full text-sm font-bold hover:bg-stone-100 dark:hover:bg-white/10 transition-all flex items-center shadow-sm">
                     Join the Cause
                 </a>
+                <a href="#donation" onclick="lenis.scrollTo('#donation')" class="px-8 py-3.5 bg-emerald-600 text-white rounded-full text-sm font-bold hover:-translate-y-1 transition-all shadow-floating">
+                    Donate Now
+                </a>
             </div>
 
-            <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 w-full max-w-2xl gsap-fade-up mb-6 sm:mb-8">
+            <div class="mt-8 md:mt-12 w-full max-w-2xl gsap-fade-up mb-4 mx-auto">
                 <div class="glass-panel rounded-3xl p-4 md:p-5 flex flex-col md:flex-row items-center gap-4 border border-white/20 shadow-soft hover:shadow-floating transition-all duration-500">
                     <div class="w-12 h-12 rounded-full bg-gradient-to-br from-velvet-gold/20 to-transparent flex items-center justify-center shrink-0 border border-velvet-gold/20">
                         <i data-lucide="sparkles" class="w-5 h-5 text-velvet-gold"></i>
@@ -394,9 +435,9 @@
             </div>
         </div>
 
-        <div class="absolute bottom-16 sm:bottom-4 md:bottom-6 lg:bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 gsap-fade-up opacity-60 z-20">
-            <span class="text-[0.5rem] uppercase tracking-[0.3em] text-stone-500 font-bold mb-1">Scroll</span>
-            <div class="w-px h-8 md:h-12 bg-gradient-to-b from-velvet-sage to-transparent"></div>
+        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 gsap-fade-up opacity-40 z-20">
+            <span class="text-[0.45rem] uppercase tracking-[0.3em] text-stone-500 font-bold">Scroll</span>
+            <div class="w-px h-6 bg-gradient-to-b from-velvet-sage to-transparent"></div>
         </div>
     </header>
 
@@ -404,11 +445,81 @@
         <div class="container mx-auto px-6 max-w-4xl text-center relative z-10">
             <i data-lucide="quote" class="w-10 h-10 text-velvet-sage/30 mx-auto mb-8"></i>
             <h2 class="gsap-fade-up font-serif text-3xl md:text-4xl lg:text-5xl text-stone-900 dark:text-white leading-relaxed">
-                Vishoka Foundation works on the principle of <span class="text-velvet-sage italic">"Towards a Life of Bliss"</span>, guiding people toward a happy, peaceful, and balanced life while serving humanity with love, compassion, and cooperation.
+                Vishoka Welfare Association works on the principle of <span class="text-velvet-sage italic">"Towards a Life of Bliss"</span>, guiding people toward a happy, peaceful, and balanced life while serving humanity with love, compassion, and cooperation.
             </h2>
             <p class="mt-6 text-stone-600 dark:text-stone-300 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
-                The Foundation is dedicated to the memory of the late Shri Ashok Kumar and continues to reduce suffering through free health camps, blood donation drives, food distribution, clothing donations, yoga camps, and health awareness programs.
+                The Association is dedicated to the memory of the late Shri Ashok Kumar and continues to reduce suffering through free health camps, blood donation drives, food distribution, clothing donations, yoga camps, and health awareness programs.
             </p>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 md:py-28 relative z-10">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-14 gsap-fade-up">
+                <span class="text-velvet-sage text-xs font-bold uppercase tracking-[0.25em]">Introduction | परिचय</span>
+                <h2 class="font-serif text-4xl md:text-6xl text-stone-900 dark:text-white mt-3">Who We Are | हमारे बारे में</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-10 items-stretch">
+                <div class="gsap-fade-up glass-panel rounded-[2.25rem] p-6 md:p-8 border border-white/20 shadow-soft">
+                    <h3 class="font-serif text-2xl md:text-3xl text-stone-900 dark:text-white mb-4">English</h3>
+                    <p class="text-stone-700 dark:text-stone-200 leading-relaxed text-sm md:text-base">
+                        Vishoka Welfare Association is a dedicated social organization working continuously for the upliftment of society, based on the core values of service, compassion, and awareness. Under the inspiring leadership of Ms. Deepika Kapoor, the organization strives to bring positive change in people’s lives through wellness programs, healthcare services, awareness campaigns, and humanitarian initiatives.
+                    </p>
+                    <p class="text-stone-700 dark:text-stone-200 leading-relaxed text-sm md:text-base mt-4">
+                        Its objective is not only to provide support but also to empower individuals, promote self-reliance, and create a healthy, aware, and inclusive environment. Vishoka Welfare Association remains committed to serving humanity with love, empathy, and cooperation.
+                    </p>
+                </div>
+
+                <div class="gsap-fade-up glass-panel rounded-[2.25rem] p-6 md:p-8 border border-white/20 shadow-soft">
+                    <h3 class="font-serif text-2xl md:text-3xl text-stone-900 dark:text-white mb-4">हिंदी</h3>
+                    <p class="text-stone-700 dark:text-stone-200 leading-relaxed text-sm md:text-base">
+                        विषोका वेलफेयर एसोसिएशन एक समर्पित सामाजिक संस्था है, जो सेवा, करुणा और जागरूकता के मूल्यों पर आधारित होकर समाज के उत्थान के लिए निरंतर कार्य कर रही है। सुश्री दीपिका कपूर के प्रेरणादायक नेतृत्व में, यह संस्था वेलनेस प्रोग्राम, स्वास्थ्य सेवाओं, जागरूकता अभियानों और मानवीय कार्यों के माध्यम से लोगों के जीवन में सकारात्मक परिवर्तन लाने का प्रयास करती है।
+                    </p>
+                    <p class="text-stone-700 dark:text-stone-200 leading-relaxed text-sm md:text-base mt-4">
+                        हमारा उद्देश्य केवल सहायता प्रदान करना ही नहीं, बल्कि समाज के हर वर्ग को सशक्त बनाना, उन्हें आत्मनिर्भर बनाना और एक स्वस्थ, जागरूक एवं समावेशी वातावरण का निर्माण करना है। विषोका वेलफेयर एसोसिएशन प्रेम, सहानुभूति और सहयोग की भावना के साथ मानवता की सेवा के लिए प्रतिबद्ध है।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mission" class="py-24 bg-stone-100 dark:bg-black relative z-10">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-14 gsap-fade-up">
+                <span class="text-velvet-gold text-xs font-bold uppercase tracking-[0.25em]">Mission & Vision | उद्देश्य और दृष्टि</span>
+                <h2 class="font-serif text-4xl md:text-6xl text-stone-900 dark:text-white mt-3">Care. Compassion. Change.</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+                <div class="gsap-fade-up glass-panel rounded-[2rem] p-6 md:p-8 border border-white/20">
+                    <h3 class="font-serif text-2xl text-stone-900 dark:text-white mb-3">Mission | हमारा उद्देश्य</h3>
+                    <p class="text-stone-700 dark:text-stone-200 text-sm md:text-base leading-relaxed">
+                        To serve humanity with compassion, dedication, and a spirit of selfless service. सेवा, करुणा और समर्पण के साथ मानवता की सेवा करना तथा समाज में स्वास्थ्य और जागरूकता को बढ़ावा देना।
+                    </p>
+                </div>
+                <div class="gsap-fade-up glass-panel rounded-[2rem] p-6 md:p-8 border border-white/20">
+                    <h3 class="font-serif text-2xl text-stone-900 dark:text-white mb-3">Vision | हमारी दृष्टि</h3>
+                    <p class="text-stone-700 dark:text-stone-200 text-sm md:text-base leading-relaxed">
+                        To build a healthy, aware, empowered, and inclusive society. एक स्वस्थ, जागरूक, सशक्त और समावेशी समाज का निर्माण करना।
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-4 md:gap-6 mt-10" id="stats-section">
+                <div class="gsap-fade-up rounded-2xl p-5 bg-white/70 dark:bg-white/5 border border-stone-200 dark:border-white/10 text-center">
+                    <p class="text-3xl md:text-4xl font-extrabold text-velvet-sage"><span class="stat-counter" data-target="250">0</span>+</p>
+                    <p class="text-xs uppercase tracking-[0.2em] mt-2 text-stone-600 dark:text-stone-300">Lives Impacted</p>
+                </div>
+                <div class="gsap-fade-up rounded-2xl p-5 bg-white/70 dark:bg-white/5 border border-stone-200 dark:border-white/10 text-center">
+                    <p class="text-3xl md:text-4xl font-extrabold text-velvet-gold"><span class="stat-counter" data-target="4">0</span>+</p>
+                    <p class="text-xs uppercase tracking-[0.2em] mt-2 text-stone-600 dark:text-stone-300">Health Camps</p>
+                </div>
+                <div class="gsap-fade-up rounded-2xl p-5 bg-white/70 dark:bg-white/5 border border-stone-200 dark:border-white/10 text-center">
+                    <p class="text-3xl md:text-4xl font-extrabold text-velvet-rose"><span class="stat-counter" data-target="3">0</span>+</p>
+                    <p class="text-xs uppercase tracking-[0.2em] mt-2 text-stone-600 dark:text-stone-300">Donation Drives</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -559,9 +670,103 @@
             <div class="mt-14 max-w-4xl mx-auto text-center gsap-fade-up">
                 <div class="glass-panel rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 border border-white/20 shadow-soft">
                     <p class="text-stone-700 dark:text-stone-200 text-sm md:text-base leading-relaxed">
-                        We urge all of you to join Vishoka Foundation and become a part of social service. Let us all come together to help those in need and bring happiness into their lives. You can contribute to this noble cause through your time, cooperation, or donations. Your small step can make a big difference in someone's life.
+                        We urge all of you to join Vishoka Welfare Association and become a part of social service. Let us all come together to help those in need and bring happiness into their lives. You can contribute to this noble cause through your time, cooperation, or donations. Your small step can make a big difference in someone's life.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="health-camp" class="py-24 bg-emerald-50 dark:bg-emerald-950/20 relative z-10 border-y border-emerald-100 dark:border-emerald-800/30">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div class="gsap-fade-up">
+                    <span class="text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-[0.25em]">Health Camp | स्वास्थ्य शिविर</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-stone-900 dark:text-white mt-3 mb-5">Free Health Camps | निःशुल्क स्वास्थ्य शिविर</h2>
+                    <p class="text-stone-700 dark:text-stone-200 text-sm md:text-base leading-relaxed mb-4">
+                        We regularly organize free health camps to support communities in need. हम नियमित रूप से निःशुल्क स्वास्थ्य शिविर आयोजित करते हैं।
+                    </p>
+                    <ul class="space-y-2 text-stone-700 dark:text-stone-200 text-sm md:text-base">
+                        <li>✔ Free Checkups | निःशुल्क जांच</li>
+                        <li>✔ Free Consultation | निःशुल्क परामर्श</li>
+                        <li>✔ Basic Medicines | मूलभूत दवाइयाँ</li>
+                    </ul>
+                    <p class="mt-5 text-sm text-stone-600 dark:text-stone-300">
+                        In Association with: Sky Healthcare Center Service Pvt. Ltd.
+                    </p>
+                </div>
+                <div class="gsap-fade-up glass-panel rounded-[2rem] p-6 md:p-8 border border-white/20 shadow-soft">
+                    <h3 class="font-serif text-2xl text-stone-900 dark:text-white mb-3">Camp Support Line</h3>
+                    <p class="text-stone-700 dark:text-stone-200 text-sm md:text-base leading-relaxed mb-5">
+                        For upcoming camps, screenings, and volunteer support, connect with our medical partner team.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="tel:+917060733918" class="px-5 py-2.5 bg-stone-900 dark:bg-white text-white dark:text-stone-900 rounded-full text-xs font-bold uppercase tracking-[0.15em]">Call: +91 7060733918</a>
+                        <a href="#contact" onclick="lenis.scrollTo('#contact')" class="px-5 py-2.5 border border-stone-300 dark:border-white/20 rounded-full text-xs font-bold uppercase tracking-[0.15em]">View Camps</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sky-center" class="py-24 md:py-28 relative z-10 overflow-hidden">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-12 gsap-fade-up">
+                <span class="text-velvet-sage text-xs font-bold uppercase tracking-[0.25em]">Center Spotlight</span>
+                <h2 class="font-serif text-4xl md:text-6xl text-stone-900 dark:text-white mt-3">Sky Healthcare Center Service Pvt. Ltd.</h2>
+                <p class="mt-4 text-stone-600 dark:text-stone-300 text-sm md:text-base">24×7 Medical & Health Care Services | In Association with Vishoka Welfare Association</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-7 md:gap-8">
+                <div class="gsap-fade-up glass-panel rounded-[2rem] p-6 md:p-8 border border-white/20 shadow-soft">
+                    <h3 class="font-serif text-2xl text-stone-900 dark:text-white mb-4">About</h3>
+                    <p class="text-stone-700 dark:text-stone-200 text-sm md:text-base leading-relaxed">
+                        Sky Healthcare Center Service Pvt. Ltd. is a trusted healthcare provider offering 24×7 medical and health care services. It operates in association with Vishoka Welfare Association with the aim of providing quality healthcare and wellness support to society. The center ensures reliable and compassionate care with experienced staff.
+                    </p>
+                    <h4 class="font-semibold text-stone-900 dark:text-white mt-6 mb-3">Services</h4>
+                    <ul class="space-y-2 text-stone-700 dark:text-stone-200 text-sm md:text-base">
+                        <li>- 24×7 Medical Assistance</li>
+                        <li>- Home Health Care Services</li>
+                        <li>- Patient Care & Nursing Support</li>
+                        <li>- Emergency Support</li>
+                        <li>- Wellness & Health Programs</li>
+                    </ul>
+                </div>
+
+                <div class="gsap-fade-up glass-panel rounded-[2rem] p-6 md:p-8 border border-white/20 shadow-soft">
+                    <h3 class="font-serif text-2xl text-stone-900 dark:text-white mb-4">Address & Contact</h3>
+                    <p class="text-stone-700 dark:text-stone-200 text-sm md:text-base leading-relaxed">
+                        Sky Healthcare Center Services<br>
+                        Balaji Enclave, House No. A-6<br>
+                        Upper Aamwala, Nalapani, Tapovan Road<br>
+                        Landmark: Near The Nest Homestay (Just before Uttarakhand Antriksh Bhawan)<br>
+                        Dehradun, Uttarakhand, India
+                    </p>
+                    <div class="mt-5 space-y-2 text-sm md:text-base text-stone-700 dark:text-stone-200">
+                        <p><strong>Phone:</strong> 7060733918, 7900951236</p>
+                        <p><strong>Email:</strong> skyhealthcarecenterservice@gmail.com</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <a href="mailto:skyhealthcarecenterservice@gmail.com" class="px-5 py-2.5 rounded-full bg-stone-900 dark:bg-white text-white dark:text-stone-900 text-xs font-bold uppercase tracking-[0.15em]">Email Center</a>
+                        <a href="tel:+917900951236" class="px-5 py-2.5 rounded-full border border-stone-300 dark:border-white/20 text-xs font-bold uppercase tracking-[0.15em]">Call Center</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gsap-fade-up mt-8 glass-panel rounded-[2rem] p-6 md:p-8 border border-white/20 shadow-soft">
+                <h3 class="font-serif text-2xl text-stone-900 dark:text-white mb-2">SKY Healthcare Yoga & Wellness Center</h3>
+                <p class="text-stone-700 dark:text-stone-200 text-sm md:text-base leading-relaxed">
+                    A unit of SKY Healthcare Center Service Pvt. Ltd., offering yoga and wellness programs focused on physical health, mental peace, and holistic lifestyle improvement.
+                </p>
+                <p class="mt-4 text-stone-700 dark:text-stone-200 text-sm md:text-base">
+                    <strong>Location:</strong> Shubh Drishti Tower, near Touch Wood School, Sahastradhara Road, Dehradun, Uttarakhand
+                </p>
+                <p class="mt-2 text-stone-700 dark:text-stone-200 text-sm md:text-base">
+                    <strong>Contact:</strong> +91 7060733918, +91 72908 51928, +91 79009 51236
+                </p>
+                <p class="mt-2 text-stone-700 dark:text-stone-200 text-sm md:text-base">
+                    <strong>Timings:</strong> Morning & Evening Yoga Sessions Available
+                </p>
             </div>
         </div>
     </section>
@@ -588,10 +793,10 @@
 
                         <div class="space-y-6 text-stone-300 font-light leading-relaxed mb-10">
                             <p>
-                                Led by Ms. Deepika Kapoor, the Association strives to improve society through wellness programs, awareness campaigns, value-based education, and humanitarian service.
+                                Vishoka Welfare Association is a dedicated social organization working continuously for the upliftment of society, based on the core values of service, compassion, and awareness. Under the inspiring leadership of Ms. Deepika Kapoor, the organization strives to bring positive change in people’s lives through wellness programs, healthcare services, awareness campaigns, and humanitarian initiatives.
                             </p>
                             <p>
-                                It is a social organization that serves humanity with love, compassion, and cooperation, extending the clinical excellence of Sky Healthcare into community welfare.
+                                Its objective is not only to provide support but also to empower individuals, promote self-reliance, and create a healthy, aware, and inclusive environment. Vishoka Welfare Association remains committed to serving humanity with love, empathy, and cooperation.
                             </p>
                         </div>
                         
@@ -602,6 +807,26 @@
                                 <span class="text-[0.6rem] md:text-xs font-bold uppercase tracking-widest text-velvet-sage">Guiding Light</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 gsap-fade-up bg-gradient-to-br from-stone-900 to-velvet-royal rounded-[2.5rem] overflow-hidden shadow-2xl relative border border-white/10">
+                <div class="absolute inset-0 bg-noise opacity-10"></div>
+                <div class="flex flex-col md:flex-row relative z-10">
+                    <div class="md:w-1/3 h-[280px] md:h-auto overflow-hidden bg-stone-800">
+                        <img src="assets/Shri_Ashok_Kumar.jpeg" class="w-full h-full object-cover" alt="Late Shri Ashok Kumar" onerror="this.src='https://placehold.co/700x900/1A1821/C5A065?text=Late+Shri+Ashok+Kumar'">
+                    </div>
+                    <div class="md:w-2/3 p-6 md:p-10 text-white flex flex-col justify-center">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="h-px w-10 bg-velvet-gold"></span>
+                            <span class="text-velvet-gold font-bold uppercase tracking-[0.2em] text-xs">In Loving Memory</span>
+                        </div>
+                        <h3 class="font-serif text-3xl md:text-4xl">Late Shri Ashok Kumar</h3>
+                        <p class="text-velvet-sage/90 font-serif italic text-lg mt-2">Guiding Inspiration</p>
+                        <p class="text-stone-300 mt-5 leading-relaxed text-sm md:text-base">
+                            Dedicated in loving memory of Late Shri Ashok Kumar Ji, whose values of kindness, dignity, and service continue to inspire the mission of Vishoka Welfare Association.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -666,13 +891,16 @@
                     return `https://placehold.co/400x500/2A2A2A/8DA399?text=${member.name.split(' ')[0]}`;
                 };
 
-                const buildMemberCard = (member, compact = false, featured = false) => {
+                const buildMemberCard = (member, compact = false, featured = false, eager = true) => {
                     const imageSrc = getMemberImageSrc(member);
+                    const imageLoading = 'eager'; 
+                    const imagePriority = eager ? 'high' : 'low';
+                    const fallbackImage = `https://placehold.co/400x500/2A2A2A/8DA399?text=${encodeURIComponent(member.name.split(' ')[0])}`;
                     if (compact) {
                         return `
                             <div class="gsap-fade-up w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] max-w-[350px] glass-panel p-4 rounded-[2rem] border border-stone-200 dark:border-white/5 flex items-center gap-4 hover:shadow-floating hover:-translate-y-1 transition-all duration-300 group">
                                 <div class="w-16 h-16 rounded-[1rem] bg-stone-200 dark:bg-stone-800 shrink-0 overflow-hidden relative border border-white/20">
-                                    <img src="${imageSrc}" alt="${member.name} - ${member.role}" class="w-full h-full object-cover transition-all duration-500">
+                                    <img src="${imageSrc}" alt="${member.name} - ${member.role}" class="block w-full h-full object-cover transition-all duration-500" width="64" height="64" loading="${imageLoading}" fetchpriority="${imagePriority}" decoding="auto" onerror="this.onerror=null;this.src='${fallbackImage}'">
                                 </div>
                                 <div>
                                     <h4 class="font-serif text-xl text-stone-900 dark:text-white mb-0.5">${member.name}</h4>
@@ -690,8 +918,7 @@
                             <div class="gsap-fade-up w-full md:w-[calc(50%-0.75rem)] xl:w-[calc(25%-1.125rem)] max-w-[420px] relative glass-panel p-4 pb-7 rounded-[2.5rem] hover:shadow-floating border border-white/20 hover:-translate-y-3 transition-all duration-500 text-center group">
                                 <div class="absolute inset-0 rounded-[2.5rem] border-2 border-transparent group-hover:border-velvet-gold/35 transition-colors duration-500 pointer-events-none"></div>
                                 <div class="w-full aspect-[5/6] rounded-[2rem] bg-stone-200 dark:bg-stone-800 mb-5 overflow-hidden border-4 border-white/50 dark:border-white/10 relative">
-                                    <div class="absolute inset-0 bg-stone-300 dark:bg-stone-700 animate-pulse-slow"></div>
-                                    <img src="${imageSrc}" alt="${member.name} - ${member.role}" class="relative z-10 w-full h-full object-cover transition-all duration-700 transform group-hover:scale-110">
+                                    <img src="${imageSrc}" alt="${member.name} - ${member.role}" class="relative z-10 block w-full h-full object-cover transition-all duration-700 transform group-hover:scale-110" width="560" height="672" loading="${imageLoading}" fetchpriority="${imagePriority}" decoding="auto" onerror="this.onerror=null;this.src='${fallbackImage}'">
                                 </div>
                                 <div class="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full bg-velvet-gold/10 border border-velvet-gold/30 text-velvet-gold text-[0.58rem] uppercase tracking-[0.2em] font-bold">
                                     <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
@@ -706,8 +933,7 @@
                         <div class="gsap-fade-up w-full sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] max-w-[300px] relative glass-panel p-3 pb-6 rounded-arch hover:shadow-floating border border-white/20 hover:-translate-y-3 transition-all duration-500 text-center group">
                             <div class="absolute inset-0 rounded-arch border-2 border-transparent group-hover:border-velvet-sage/30 transition-colors duration-500 pointer-events-none"></div>
                             <div class="w-full aspect-[4/5] rounded-t-[10rem] rounded-b-xl bg-stone-200 dark:bg-stone-800 mb-5 overflow-hidden border-4 border-white/50 dark:border-white/10 relative">
-                                <div class="absolute inset-0 bg-stone-300 dark:bg-stone-700 animate-pulse-slow"></div>
-                                <img src="${imageSrc}" alt="${member.name} - ${member.role}" class="relative z-10 w-full h-full object-cover transition-all duration-700 transform group-hover:scale-110">
+                                <img src="${imageSrc}" alt="${member.name} - ${member.role}" class="relative z-10 block w-full h-full object-cover transition-all duration-700 transform group-hover:scale-110" width="480" height="600" loading="${imageLoading}" fetchpriority="${imagePriority}" decoding="auto" onerror="this.onerror=null;this.src='${fallbackImage}'">
                             </div>
                             <h4 class="font-serif text-lg md:text-xl text-stone-900 dark:text-white mb-1">${member.name}</h4>
                             <p class="text-[0.6rem] uppercase tracking-widest text-velvet-sage font-bold mt-1">${member.role}</p>
@@ -728,7 +954,7 @@
                                 <h4 class="font-serif text-2xl md:text-3xl text-stone-900 dark:text-white text-center">Leadership Council</h4>
                             </div>
                             <div class="flex flex-wrap justify-center gap-6 xl:gap-7">
-                                ${leadershipMembers.map((member) => buildMemberCard(member, false, true)).join('')}
+                                ${leadershipMembers.map((member, index) => buildMemberCard(member, false, true, index < 2)).join('')}
                             </div>
                         </div>
                     `
@@ -744,7 +970,7 @@
                         if (!members.length) return '';
 
                         const compactRole = role === 'Non-Executive Member';
-                        const cards = members.map((member) => buildMemberCard(member, compactRole)).join('');
+                        const cards = members.map((member, index) => buildMemberCard(member, compactRole, false, index === 0)).join('');
 
                         return `
                             <div class="gsap-fade-up">
@@ -779,15 +1005,77 @@
                 We urge all of you to join Vishoka Welfare Association and become a part of social service. You can contribute to this noble cause through your time, cooperation, or donations. Your small step can make a big difference.
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 gsap-fade-up" id="contact">
-                <a href="tel:+917900951236" class="px-8 py-4 bg-white text-stone-900 rounded-full font-bold shadow-lg hover:-translate-y-1 hover:shadow-neon-sage transition-all flex items-center gap-3">
-                    <i data-lucide="phone-call" class="w-5 h-5 text-velvet-sage"></i> +91-79009 51236
-                </a>
-                <a href="mailto:vishokafoundation@gmail.com" class="px-8 py-4 border border-white/20 rounded-full font-bold hover:bg-white/10 hover:-translate-y-1 transition-all flex items-center gap-3 group">
-                    <i data-lucide="mail" class="w-5 h-5 transition-colors"></i> vishokafoundation@gmail.com
-                </a>
+            <div class="w-full max-w-4xl mx-auto gsap-fade-up" id="contact">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="tel:+917060733918" class="w-full px-8 py-4 bg-white text-stone-900 rounded-full font-bold shadow-lg hover:-translate-y-1 hover:shadow-neon-sage transition-all flex items-center justify-center gap-3 text-center">
+                        <i data-lucide="phone-call" class="w-5 h-5 text-velvet-sage"></i> +91-70607 33918
+                    </a>
+                    <a href="tel:+917900951236" class="w-full px-8 py-4 bg-white text-stone-900 rounded-full font-bold shadow-lg hover:-translate-y-1 hover:shadow-neon-sage transition-all flex items-center justify-center gap-3 text-center">
+                        <i data-lucide="phone-call" class="w-5 h-5 text-velvet-sage"></i> +91-79009 51236
+                    </a>
+                </div>
+                <div class="flex justify-center mt-4">
+                    <a href="mailto:vishokafoundation@gmail.com" class="w-full sm:w-auto px-8 py-4 border border-white/20 rounded-full font-bold hover:bg-white/10 hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group text-center">
+                        <i data-lucide="mail" class="w-5 h-5 transition-colors"></i> vishokafoundation@gmail.com
+                    </a>
+                </div>
             </div>
-            <p class="text-stone-300 text-sm mt-6 gsap-fade-up">For any queries, please contact at: +91-79009 51236 or send your query to vishokafoundation@gmail.com</p>
+            <p class="text-stone-300 text-sm mt-6 gsap-fade-up">For any queries, please contact at: +91-70607 33918, +91-79009 51236 or send your query to vishokafoundation@gmail.com</p>
+            <p class="text-stone-300 text-sm mt-2 gsap-fade-up">Address: शुभ दृष्टि टावर, टच वुड स्कूल के पास, सहस्त्रधारा रोड, देहरादून – 248001</p>
+        </div>
+    </section>
+
+    <section id="donation" class="py-24 md:py-28 bg-black text-white relative z-10 overflow-hidden border-y border-white/10">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(197,160,101,0.25),transparent_45%),radial-gradient(circle_at_80%_10%,rgba(141,163,153,0.2),transparent_40%)]"></div>
+        <div class="container mx-auto px-6 relative z-10 max-w-6xl">
+            <div class="text-center mb-10 gsap-fade-up">
+                <span class="text-emerald-300 text-xs font-bold uppercase tracking-[0.25em]">Donation | आपका सहयोग महत्वपूर्ण है</span>
+                <h2 class="font-serif text-4xl md:text-6xl mt-3">Make a Difference Today</h2>
+                <p class="max-w-3xl mx-auto mt-4 text-stone-300 text-sm md:text-base leading-relaxed">
+                    Your small contribution can make a big difference in someone’s life. हमारे साथ जुड़ें और जरूरतमंदों की मदद करें।
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 gsap-fade-up">
+                <div class="rounded-2xl p-5 border border-white/15 bg-white/5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-emerald-300">UPI ID</p>
+                    <p class="mt-2 text-sm text-stone-200">Coming Soon</p>
+                </div>
+                <div class="rounded-2xl p-5 border border-white/15 bg-white/5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-emerald-300">QR Code</p>
+                    <p class="mt-2 text-sm text-stone-200">Coming Soon</p>
+                </div>
+                <div class="rounded-2xl p-5 border border-white/15 bg-white/5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-emerald-300">Bank Details</p>
+                    <p class="mt-2 text-sm text-stone-200">Coming Soon</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center gsap-fade-up">
+                <a href="tel:+917900951236" class="px-10 py-4 bg-emerald-500 rounded-full text-sm md:text-base font-extrabold uppercase tracking-[0.15em] text-black hover:bg-emerald-400 transition-colors">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="join" class="py-24 md:py-28 relative z-10">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="glass-panel rounded-[2.5rem] p-8 md:p-12 border border-white/20 shadow-floating">
+                <div class="text-center gsap-fade-up">
+                    <span class="text-velvet-sage text-xs font-bold uppercase tracking-[0.25em]">Join Us | हमसे जुड़ें</span>
+                    <h2 class="font-serif text-4xl md:text-6xl text-stone-900 dark:text-white mt-3">Become a Volunteer</h2>
+                    <p class="text-stone-700 dark:text-stone-200 max-w-3xl mx-auto mt-4 text-sm md:text-base leading-relaxed">
+                        Join our mission and be a part of real change. वॉलंटियर बनें, इवेंट्स में भाग लें, समाज सेवा में योगदान दें।
+                    </p>
+                </div>
+                <div class="grid sm:grid-cols-3 gap-4 mt-8">
+                    <div class="gsap-fade-up rounded-2xl p-5 bg-white/60 dark:bg-white/5 border border-stone-200 dark:border-white/10 text-center text-sm font-semibold text-stone-800 dark:text-stone-100">Volunteer with us | वॉलंटियर बनें</div>
+                    <div class="gsap-fade-up rounded-2xl p-5 bg-white/60 dark:bg-white/5 border border-stone-200 dark:border-white/10 text-center text-sm font-semibold text-stone-800 dark:text-stone-100">Participate in events | इवेंट्स में भाग लें</div>
+                    <div class="gsap-fade-up rounded-2xl p-5 bg-white/60 dark:bg-white/5 border border-stone-200 dark:border-white/10 text-center text-sm font-semibold text-stone-800 dark:text-stone-100">Support social service | समाज सेवा में योगदान दें</div>
+                </div>
+                <div class="text-center mt-8 gsap-fade-up">
+                    <a href="mailto:vishokafoundation@gmail.com" class="inline-flex px-8 py-3.5 rounded-full bg-stone-900 dark:bg-white text-white dark:text-stone-900 text-sm font-bold uppercase tracking-[0.15em] hover:-translate-y-1 transition-transform">Join Now</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -802,7 +1090,7 @@
                 <div class="lg:w-5/12 space-y-8 flex flex-col justify-center">
                     <div class="space-y-4">
                                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-velvet-gold/30 bg-velvet-gold/5 text-velvet-gold text-[0.6rem] font-bold uppercase tracking-widest shadow-neon-gold">
-                                     A Vishoka Foundation Initiative
+                                     A Vishoka Welfare Association Initiative
                         </div>
                         <h2 class="font-serif text-5xl md:text-6xl text-white leading-none">
                             VISHOKA <br>
@@ -884,20 +1172,29 @@
                 <div class="flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-8 relative z-10">
                     
                     <div class="flex flex-wrap justify-center lg:justify-start gap-3">
-                        <a href="#home" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
+                        <a href="#home" onclick="lenis.scrollTo('#home')" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
                             Home
                         </a>
-                        <a href="#president" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
+                        <a href="#about" onclick="lenis.scrollTo('#about')" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
+                            About
+                        </a>
+                        <a href="#donation" onclick="lenis.scrollTo('#donation')" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
+                            Donate
+                        </a>
+                        <a href="#president" onclick="lenis.scrollTo('#president')" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
                             president
                         </a>
-                        <a href="#team" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
+                        <a href="#team" onclick="lenis.scrollTo('#team')" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
                             Team
                         </a>
-                        <a href="#services" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
+                        <a href="#services" onclick="lenis.scrollTo('#services')" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
                             Services
                         </a>
-                        <a href="#contact" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
+                        <a href="#contact" onclick="lenis.scrollTo('#contact')" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
                             Contact
+                        </a>
+                        <a href="#join" onclick="lenis.scrollTo('#join')" class="px-5 py-2.5 rounded-full border border-white/5 bg-white/5 hover:bg-velvet-gold/15 hover:border-velvet-gold/30 hover:text-velvet-gold text-stone-400 text-[0.65rem] md:text-xs font-bold uppercase tracking-widest transition-all backdrop-blur-sm shadow-sm">
+                            Join
                         </a>
                     </div>
 
@@ -963,19 +1260,48 @@
             }, 800);
         });
 
+        // Stat Counter Animation
+        const statSection = document.getElementById('stats-section');
+        const counters = document.querySelectorAll('.stat-counter');
+        if (statSection && counters.length > 0) {
+            ScrollTrigger.create({
+                trigger: statSection,
+                start: "top 85%",
+                onEnter: () => {
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        gsap.fromTo(counter, 
+                            { innerHTML: 0 }, 
+                            { innerHTML: target, duration: 2, ease: "power2.out", snap: { innerHTML: 1 }, stagger: 0.2 }
+                        );
+                    });
+                },
+                onEnterBack: () => {
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        gsap.fromTo(counter, 
+                            { innerHTML: 0 }, 
+                            { innerHTML: target, duration: 2, ease: "power2.out", snap: { innerHTML: 1 } }
+                        );
+                    });
+                }
+            });
+        }
+
         // Setup ScrollTrigger for rest of the page elements
         gsap.utils.toArray('section .gsap-fade-up').forEach(elem => {
+            const isTeamElement = !!elem.closest('#team');
             gsap.fromTo(elem, 
-                { y: 50, autoAlpha: 0 },
+                { y: isTeamElement ? 20 : 50, autoAlpha: 0 },
                 {
                     scrollTrigger: {
                         trigger: elem,
-                        start: "top 85%",
+                        start: isTeamElement ? "top 115%" : "top 85%",
                     },
                     y: 0,
                     autoAlpha: 1,
-                    duration: 1,
-                    ease: "power3.out"
+                    duration: isTeamElement ? 0.6 : 1,
+                    ease: "power2.out"
                 }
             );
         });
@@ -1186,5 +1512,12 @@
             animateCanvas();
         }
     </script>
+
+    <a href="https://wa.me/917900951236" target="_blank" class="floating-wa" aria-label="WhatsApp Chat">
+        <svg role="img" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+            <title>WhatsApp</title>
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.572-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/>
+        </svg>
+    </a>
 </body>
 </html>
